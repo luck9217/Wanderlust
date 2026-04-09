@@ -1,151 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Pastelería Wanderlust: tortas, boxes de degustación y mesa dulce para eventos en Buenos Aires."
+  />
+  <title>Pastelería Wanderlust | Tortas y Mesa Dulce</title>
 
-    <!-- Mensaje en Navegador -->
-    <title >Pasteleria Creativa by Lula</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous"
+  />
 
-    <!-- Background con imagen -->
-    <style>
-        .slider{
-            background: url("images/Presentacion.jpg");
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
+  <style>
+    :root {
+      --pink-50: #fff6fb;
+      --pink-100: #ffe8f4;
+      --pink-200: #ffd6ea;
+      --pink-600: #c2185b;
+      --brown-900: #3b2a22;
+    }
 
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--brown-900);
+      background-color: #fff;
+    }
 
-      }
+    .hero {
+      min-height: 88vh;
+      background: linear-gradient(rgba(54, 29, 40, 0.55), rgba(54, 29, 40, 0.55)),
+        url("Images/Presentacion.JPG") center/cover no-repeat;
+      color: #fff;
+    }
 
-     
+    .hero .badge-custom {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 20px;
+      padding: 0.4rem 0.9rem;
+      font-weight: 600;
+    }
 
+    .navbar {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
 
+    .section-title {
+      font-weight: 700;
+      color: var(--pink-600);
+    }
 
-    </style>
+    .product-card {
+      border: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(44, 15, 29, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 100%;
+    }
 
-<link href="carousel.css" rel="stylesheet">
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(44, 15, 29, 0.13);
+    }
 
+    .product-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .price-tag {
+      color: var(--pink-600);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .btn-brand {
+      background-color: var(--pink-600);
+      border-color: var(--pink-600);
+      border-radius: 999px;
+      padding: 0.55rem 1.15rem;
+      font-weight: 600;
+    }
+
+    .btn-brand:hover {
+      background-color: #a3154b;
+      border-color: #a3154b;
+    }
+
+    .feature-box {
+      background: var(--pink-50);
+      border: 1px solid var(--pink-100);
+      border-radius: 14px;
+      padding: 1rem;
+      height: 100%;
+    }
+
+    .cta {
+      background: linear-gradient(120deg, var(--pink-600), #e54f8a);
+      border-radius: 18px;
+      color: #fff;
+    }
+
+    footer {
+      background: #2a1a21;
+      color: #f4e9ef;
+    }
+  </style>
 </head>
 
-
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <a class="navbar-brand d-flex align-items-center" href="#inicio">
+      <img src="Images/W.svg" width="32" height="32" alt="Logo Wanderlust" loading="lazy" />
+      <span class="ml-2 font-weight-bold">Wanderlust</span>
+    </a>
 
-    <!-- Texto sobre imagen se crea Slider -->
-    <section class="container-fluid slider d-flex justify-content-center align-items-center">
-        <h1 class="display-6 text-white">Wanderlust</h1>  
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarMain"
+      aria-controls="navbarMain"
+      aria-expanded="false"
+      aria-label="Abrir navegación"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    </section>
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Barra de Navegacion -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <header id="inicio" class="hero d-flex align-items-center">
+    <div class="container">
+      <span class="badge-custom d-inline-block mb-3">Pastelería artesanal</span>
+      <h1 class="display-4 font-weight-bold">Tortas y boxes dulces que enamoran a primera vista</h1>
+      <p class="lead col-lg-8 px-0 mb-4">
+        Hechas a pedido con ingredientes frescos, decoración personalizada y entrega coordinada para
+        que tu celebración salga perfecta.
+      </p>
+      <a href="#productos" class="btn btn-light btn-lg mr-2">Ver menú</a>
+      <a href="#contacto" class="btn btn-outline-light btn-lg">Hacer pedido</a>
+    </div>
+  </header>
 
-             <!-- Logo y Wanderlust -->
-            <a class="navbar-brand" href="index.html">
-                <img src="images/W.svg" width="30" height="30" alt="Logo Wanderlust" loading="lazy">
-             </a>
-            <a class="navbar-brand display-6" href="#">Wanderlust</a>
-            <a class="navbar-brand" href="#">
-                <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
-            </a>
+  <section id="productos" class="container py-5">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Nuestras presentaciones</h2>
+      <p class="mb-0">Elegí tu favorita y personalizala con sabores, colores y dedicatoria.</p>
+    </div>
 
-            <!-- Boton para resolucion pequeña -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-
-          
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-          </ul>
-        
-          
-        </div>
-      </nav>
-
-    <!-- Mensaje -->
-    <section class="container py-5">
-
-       <p class="text-center h4 justify-content-center">Conoce aqui, nuestras presentaciones </p>
-
-       <p class="text-center justify-content-center">Podes elegir entre una variadad de opciones y sabores, elegi lo que mas te guste! </p>
-    
-    </section>
-
-<!-- Card con Imagenes -->
-<section class="container py-5 d-flex">
-
-    <div class="card-deck">
-
-        <div class="card">
-          <img class="card-img-top" src="images/Caja Standar.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Caja Degustación</h4>
-            <li class="card-text">4 Galletitas</li>
-            <li class="card-text">1 Cupcake</li>
-            <li class="card-text">2 Alfajores Sablée</li>
-            <li class="card-text">2 Alfajores de Maicena</li>
-            <br>
-            <a href="#!" class="btn btn-primary px-5">Comprar!</a>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <article class="card product-card">
+          <img class="card-img-top" src="Images/Caja Standar.jpg" alt="Caja degustación de pastelería" />
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Caja Degustación</h3>
+            <ul class="pl-3 mb-3">
+              <li>4 galletitas decoradas</li>
+              <li>1 cupcake relleno</li>
+              <li>2 alfajores sablée</li>
+              <li>2 alfajores de maicena</li>
+            </ul>
+            <p class="price-tag mt-auto mb-3">Desde $18.500</p>
+            <a href="#contacto" class="btn btn-brand text-white">Reservar</a>
           </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img-top" src="images/Caja Standar.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Caja Degustación XL con Torta</h4>
-            <li class="card-text">4 Galletitas</li>
-            <li class="card-text">1 Cupcake</li>
-            <li class="card-text">2 Alfajores Sablée</li>
-            <li class="card-text">2 Alfajores de Maicena</li>
-            <br>
-            <a href="#!" class="btn btn-primary px-5">Comprar!</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img-top" src="images/Caja Standar.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Caja Standard</h4>
-            <li class="card-text">4 Galletitas</li>
-            <li class="card-text">1 Cupcake</li>
-            <li class="card-text">2 Alfajores Sablée</li>
-            <li class="card-text">2 Alfajores de Maicena</li>
-            <br>
-            <a href="#!" class="btn btn-primary px-5">Comprar!</a>
-         </div>
-        </div>
-
+        </article>
       </div>
 
+      <div class="col-md-4 mb-4">
+        <article class="card product-card">
+          <img class="card-img-top" src="Images/Caja xl con torta.jpg" alt="Caja XL con torta decorada" />
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Caja XL + Mini Torta</h3>
+            <ul class="pl-3 mb-3">
+              <li>Selección de mini pastelería</li>
+              <li>Brownies, cookies y macarons</li>
+              <li>Mini torta personalizada</li>
+              <li>Tarjeta con mensaje</li>
+            </ul>
+            <p class="price-tag mt-auto mb-3">Desde $32.000</p>
+            <a href="#contacto" class="btn btn-brand text-white">Reservar</a>
+          </div>
+        </article>
+      </div>
 
-</section>
+      <div class="col-md-4 mb-4">
+        <article class="card product-card">
+          <img class="card-img-top" src="Images/Caja xl.jpg" alt="Caja premium para regalo" />
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5 card-title">Caja Premium</h3>
+            <ul class="pl-3 mb-3">
+              <li>Mix de pastelería fina</li>
+              <li>Opciones sin TACC disponibles</li>
+              <li>Packaging para regalo</li>
+              <li>Entrega en CABA y GBA</li>
+            </ul>
+            <p class="price-tag mt-auto mb-3">Desde $26.500</p>
+            <a href="#contacto" class="btn btn-brand text-white">Reservar</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<br>
-<br>
-<br>
-<!-- Carosuel -->
+  <section id="nosotros" class="container pb-5">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="feature-box">
+          <h4 class="h6">Ingredientes de calidad</h4>
+          <p class="mb-0">Trabajamos con materias primas frescas y recetas propias.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="feature-box">
+          <h4 class="h6">Diseños personalizados</h4>
+          <p class="mb-0">Creamos propuestas únicas para cumpleaños, bodas y eventos.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="feature-box">
+          <h4 class="h6">Atención cercana</h4>
+          <p class="mb-0">Te asesoramos desde la idea inicial hasta la entrega final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="contacto" class="container pb-5">
+    <div class="cta p-4 p-md-5">
+      <div class="row align-items-center">
+        <div class="col-md-8 mb-3 mb-md-0">
+          <h2 class="h3 font-weight-bold">¿Listo para encargar tu próxima mesa dulce?</h2>
+          <p class="mb-0">Escribinos por WhatsApp y te enviamos catálogo completo y disponibilidad.</p>
+        </div>
+        <div class="col-md-4 text-md-right">
+          <a class="btn btn-light btn-lg" href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer">
+            Pedir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  
-  
+  <footer class="py-4">
+    <div class="container d-md-flex justify-content-between text-center text-md-left">
+      <p class="mb-1 mb-md-0">© 2026 Pastelería Wanderlust</p>
+      <p class="mb-0">Instagram: @wanderlust.pasteleria</p>
+    </div>
+  </footer>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+  ></script>
 </body>
 </html>
